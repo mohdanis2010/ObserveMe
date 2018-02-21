@@ -1,0 +1,96 @@
+/* All breakpoints and browsers prefixes CSS goes here */
+
+
+
+@media only screen and (max-width:1020px) {
+
+    body {
+        /*width: 1024px;*/
+        min-width: 1024px;
+
+    }
+
+    /*.container{width:1024px;}*/
+
+}
+
+
+/*@media only screen and (min-width:800px) {*/
+
+    /*.container {*/
+        /*width: 1024px;*/
+        /*min-width: 1024px;*/
+
+    /*}*/
+
+
+/*}*/
+
+/*@media only screen and (min-width:1045px) {*/
+
+    /*.container {*/
+        /*width: 1024px;*/
+        /*min-width: 1024px;*/
+
+    /*}*/
+/*}*/
+
+
+
+/*All breakpoints and browsers prefixes CSS goes here */
+
+
+
+/*@media only screen and (max-width:850px) {*/
+
+/*.container {*/
+/*width: 1024px;*/
+/*min-width: 1024px;*/
+/*border: 1px solid red;*/
+/*}*/
+
+/*.container-wrapper{width: 127% !important;}*/
+/*#footer {*/
+/*width: 127% !important;*/
+/*}*/
+
+/*}*/
+
+
+/*@media only screen and (min-width:800px) {*/
+
+/*.container {*/
+/*width: 1024px;*/
+/*min-width: 1024px;*/
+/*border: 1px solid green;*/
+/*}*/
+
+/*.container-wrapper{width: 127% !important;}*/
+/*#footer {*/
+/*width: 127% !important;*/
+/*}*/
+/*}*/
+
+/*@media only screen and (min-width:1045px) {*/
+
+/*.container {*/
+/*width: 1024px;*/
+/*min-width: 1024px;*/
+/*border: 1px solid yellow;*/
+/*}*/
+
+/*.container-wrapper{width: 100% !important;}*/
+/*#footer {*/
+/*width: 100% !important;*/
+/*}*/
+/*}*/
+
+
+
+
+
+
+
+
+
+

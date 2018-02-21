@@ -1,0 +1,456 @@
+
+<div class="pg-hdr-cntr">
+    <article role="banner" class="obsrv-banner-search container">
+
+        <div class="top-headingWrapper">
+            <div class="col-xs-6">
+                <div class="txt-darkblue-mid">Team records</div>
+            </div>
+
+        </div>
+    </article>
+</div>
+
+
+<section class="container ng-scope" role="main">
+    <div class="row clearfix">
+        <div class="content teamMembers-wrapper">
+
+
+            <div id="observation-body">
+
+
+                <div class="tab-content" id="tab-5-content">
+
+                    <div class="container">
+                        <section class="observation-record-cntr row clearfix" role="main">
+
+
+
+
+
+                            <!--##########################     REcord section-->
+
+
+
+
+
+
+
+                            <div class="row record-menu" style="margin: 0; padding: 0;">
+
+                                <div class="col-xs-3 observation-cols">
+                                    <div class="dropdown dropdown-main dropdown-out" style="display: inline-block;">
+                                        <button class="btn btn-default"
+                                                data-toggle="dropdown">
+                                            <span class="selected_title" class="dropdwn-title">{{filterByDevelopee}}</span>
+                                            <span style="float:right;"><img class="img-arrow" width="18" height="10"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" >
+
+                                            <li class="filterItems" ng-repeat="item in uniqueNames" style="padding:0 2px;">
+                                                <div class="dev-name-wrapper">
+                                                    <div class="dev-items">
+                                                        {{item}}
+                                                    </div>
+                                                    <div class="dev-chk">
+                                                        <input style="float: right;" type="checkbox" ng-model="color.selected" name="selected"  ng-click="selectPerson($event,item)">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <button type="submit" style="float: right; margin: 12px 3px 6px 0;  padding: 6px 0 2px 0;" role="button" aria-labelledby="Filter" tabindex="-1" class="col-xs-3 btn btn-primary" id="filterByname" ng-click="filterByname()">Filter</button>
+                                        </ul>
+                                    </div>
+
+                                    <div class="div-filter" ng-click="filterClear()">
+                                        <img src="img/CloseRed.png" width="12" height="12" />
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="col-xs-3 observation-cols">
+
+                                    <div class="dropdown dropdown-main dropdown-out" style="display: inline-block;">
+                                        <button class="btn btn-default"
+                                                data-toggle="dropdown">
+                                            <span class="selected_title" class="dropdwn-title">Filter by due date</span>
+                                            <span style="float:right;"><img class="img-arrow" width="18" height="10"></span>
+                                        </button>
+
+                                        <ul class="dropdown-menu" >
+                                            <li class="menu-item" style="border-bottom: none;">
+                                                <div id="datetimepicker" style="margin-bottom: 6px;">
+
+                                                    <div style="float: left;">
+                                                        <span> From </span>
+                                                        <span class="add-cal">&nbsp;</span>
+                                                    </div>
+
+                                                    <div style="float: left;">
+
+                                                        <input class="cal-inp-1" readonly='true' placeholder="From"  type="text" id="fromDate" ng-model="fromDate"  />
+                                                    </div>
+                                                </div>
+
+                                                <div class="cal-spacer"></div>
+
+                                                <div id="datetimepicker-1">
+
+
+                                                    <div style="float: left;">
+                                                        <span style="padding: 0 3px;"> To </span>
+                                                        <span class="add-cal cal-wrapp">&nbsp;</span>
+                                                    </div>
+
+                                                    <div style="float: left;">
+                                                        <input class="cal-inp-2" readonly='true' placeholder="To" type="text" id="toDate" ng-model="toDate" />
+                                                    </div>
+
+
+                                                </div>
+
+                                            </li>
+
+                                            <button type="submit" role="button" aria-labelledby="Filter" tabindex="-1" class="col-xs-3 btn btn-primary cal-done-btn" id="filterByDate" ng-click="filterByDate()">Done</button>
+
+                                        </ul>
+                                    </div>
+
+                                    <div class="div-filter" ng-click="filterClear()">
+                                        <img src="img/CloseRed.png" width="12" height="12" />
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <div class="col-xs-3 observation-cols">
+                                    <div class="dropdown dropdown-main dropdown-out" style="display: inline-block;">
+                                        <button class="btn btn-default"
+                                                data-toggle="dropdown">
+                                            <span class="selected_title" class="dropdwn-title">Filter by status</span>
+                                            <span style="float:right;"><img class="img-arrow" width="18" height="10"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" >
+
+                                            <li class="filterItems" ng-repeat="item in uniqueStatus" style="padding:0 2px;">
+                                                <div class="dev-name-wrapper">
+                                                    <div class="dev-items">
+                                                        {{item}}
+                                                    </div>
+                                                    <div class="dev-chk">
+                                                        <input style="float: right;" type="checkbox" name="selected"  ng-click="selectStatus($event,item)">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <button type="submit" style="float: right; margin: 12px 3px 6px 0;  padding: 6px 0 2px 0;" role="button" aria-labelledby="Filter" tabindex="-1" class="col-xs-3 btn btn-primary" id="filterByStatus" ng-click="filterByStatus()">Filter</button>
+                                        </ul>
+                                    </div>
+
+                                    <div class="div-filter" ng-click="filterClear()">
+                                        <img src="img/CloseRed.png" width="12" height="12" />
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-xs-3" style="text-align: right;">
+
+                                    <div class="filterBtnWrapper" style="text-align:right; margin-left: 40px;">
+                                        <div  class="btn-group filter-wrapper">
+                                            <span class="btn Observee-btn" style="width: 73px; font-size: 13px; border-radius: 4px; margin: 0 4px;padding: 6px 7px;"><a  ng-click="getObservationList(1)">Developee</a></span>
+                                            <span class="btn Observer-btn" style="width: 73px; font-size: 13px; border-radius: 4px; background-color: #d3d3d3; padding: 6px 7px;"><a  ng-click="getObservationList(2)">Developer</a></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                            <!--##########################-->
+
+
+                            <!--<section class="observation-record-cntr row clearfix" role="main">-->
+                            <!--<div class="row observation-Rcrdfilters">-->
+
+                            <!--<div class="btn-group filter-wrapper recird-wrapper2">-->
+
+                            <!--<div class="divlistWrapper">-->
+
+                            <!--<ul class="nav navbar-nav">-->
+                            <!--<li class="dropdown mega-dropdown">-->
+                            <!--<a href="javascript:" class="dropdown-toggle namefilter" >-->
+                            <!--<i class="fa fa-"></i>-->
+                            <!--Filter by developer name-->
+                            <!--</a>-->
+
+                            <!--<ul class="dropdown-menu mega-dropdown-menu" id="observerNameMenu">-->
+
+                            <!--<li class="filterItems" ng-repeat="item in uniqueNames">-->
+                            <!--<span>{{item}}-->
+                            <!--<input style="float: right;margin-right: 13px;" type="checkbox" ng-model="color.selected" name="selected"  ng-click="selectPerson($event,item)">-->
+                            <!--</span>-->
+                            <!--</li>-->
+
+                            <!--<p>-->
+                            <!--<button type="submit" style="float: right; margin: 12px 15px 6px 0;  padding: 6px 0 2px 0;" role="button" aria-labelledby="Filter" tabindex="-1" class="col-xs-3 btn btn-primary" id="filterByname" ng-click="filterByname()">Filter</button>-->
+                            <!--</p>-->
+                            <!--</ul>-->
+                            <!--</li>-->
+
+                            <!--<div class="drop-down-arrow open arrowAlign record-arrow">-->
+                            <!--<img src="img/ArrowDown.png" width="18" height="10">-->
+                            <!--</div>-->
+
+                            <!--</ul>-->
+
+                            <!--</div>-->
+
+
+
+                            <!--<div class="dropdown-div2 recordcloseBtn">-->
+                            <!--<button class="cleaFilter-btn"  ng-click="filterClear()">-->
+                            <!--<img src="img/CloseRed.png" width="12" height="12" />-->
+                            <!--</button>-->
+                            <!--</div>-->
+
+                            <!--</div>-->
+
+
+
+
+
+
+                            <!--<div class="btn-group filter-wrapper recird-wrapper2">-->
+
+                            <!--<div class="div-filterbyDate">-->
+
+                            <!--<ul class="nav navbar-nav">-->
+                            <!--<li class="dropdown mega-dropdown ">-->
+                            <!--<a href="javascript:" class="dropdown-toggle datefilter" >-->
+                            <!--<i class="fa fa-"></i>-->
+                            <!--Filter by due date-->
+                            <!--</a>-->
+
+                            <!--<ul class="dropdown-menu mega-dropdown-menu" id="observerDateMenu">-->
+
+                            <!--<li style="border-bottom:none">-->
+                            <!--<div id="datetimepicker">-->
+                            <!--<span style="padding: 0 3px;"> From </span>-->
+
+                            <!--<span class="add-cal">&nbsp;</span>-->
+
+                            <!--&lt;!&ndash;<div class="input-group date">&ndash;&gt;-->
+                            <!--<input readonly='true' placeholder="From" style="background-color: white;margin-left: 3px;" type="text" id="fromDate" ng-model="fromDate" class="form-control"  />-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--</li>-->
+
+                            <!--<li style="border-bottom:none">-->
+                            <!--<div id="datetimepicker-1">-->
+                            <!--<span style="padding: 0 3px;"> To </span>-->
+
+                            <!--&nbsp;&nbsp;&nbsp;&nbsp;<span class="add-cal">&nbsp;</span>-->
+                            <!--&lt;!&ndash;<div class="input-group date">&ndash;&gt;-->
+                            <!--<input readonly='true' placeholder="To" style="background-color: white; margin-left: 3px;" type="text" id="toDate" ng-model="toDate" class="form-control"  />-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--</div>-->
+                            <!--</li>-->
+
+                            <!--<button type="submit" style="float: right; margin: 12px 20px 6px 0;  padding: 6px 0 2px 0;" role="button" aria-labelledby="Filter" tabindex="-1" class="col-xs-3 btn btn-primary" id="filterByDate" ng-click="filterByDate()">Filter</button>-->
+
+                            <!--</ul>-->
+
+                            <!--</li>-->
+                            <!--<div class="drop-down-arrow open arrowAlign">-->
+                            <!--<img src="img/ArrowDown.png" width="18" height="10">-->
+                            <!--</div>-->
+                            <!--</ul>-->
+
+                            <!--</div>-->
+
+
+
+                            <!--<div class="dropdown-div2">-->
+                            <!--<button class="cleaFilter-btn recordcloseBtn"  ng-click="filterClear()">-->
+                            <!--<img src="img/CloseRed.png" width="15" height="15" />-->
+                            <!--</button>-->
+                            <!--</div>-->
+
+                            <!--</div>-->
+
+
+
+                            <!--<div class="btn-group filter-wrapper recird-wrapper2">-->
+
+                            <!--<div class="div-filterbyStatus">-->
+
+                            <!--<ul class="nav navbar-nav">-->
+                            <!--<li class="dropdown mega-dropdown">-->
+                            <!--<a href="javascript:" class="dropdown-toggle namefilter" >-->
+                            <!--<i class="fa fa-"></i>-->
+                            <!--Filter by status-->
+                            <!--</a>-->
+
+                            <!--<ul class="dropdown-menu mega-dropdown-menu" id="observerStatusMenu" style="min-width: 170px; display: block;">-->
+
+                            <!--<li class="filterItems" ng-repeat="item in uniqueStatus">-->
+                            <!--<span>{{item}}-->
+                            <!--<input style="float: right;margin-right: 13px;" type="checkbox" name="selected"  ng-click="selectStatus($event,item)">-->
+                            <!--</span>-->
+                            <!--</li>-->
+                            <!--<button type="submit" style="float: right; margin: 12px 15px 6px 0;  padding: 6px 0 2px 0;" role="button" aria-labelledby="Filter" tabindex="-1" class="col-xs-3 btn btn-primary" id="filterByStatus" ng-click="filterByStatus()">Filter</button>-->
+                            <!--&lt;!&ndash;<button style="float: right; margin-right: 20px;" ng-click="filterByStatus()">Filter</button>&ndash;&gt;-->
+                            <!--</ul>-->
+                            <!--</li>-->
+
+                            <!--<div class="drop-down-arrow open arrowAlign">-->
+                            <!--<img src="img/ArrowDown.png" width="18" height="10">-->
+                            <!--</div>-->
+
+                            <!--</ul>-->
+
+                            <!--</div>-->
+
+
+
+                            <!--<div class="dropdown-div2">-->
+                            <!--<button class="cleaFilter-btn recordcloseBtn"  ng-click="filterClear()">-->
+                            <!--<img src="img/CloseRed.png" width="15" height="15" />-->
+                            <!--</button>-->
+                            <!--</div>-->
+
+                            <!--</div>-->
+
+                            <!--<div class="filterBtnWrapper">-->
+                            <!--<div  class="btn-group filter-wrapper">-->
+                            <!--<span class="btn Observee-btn" style="width: 73px; font-size: 13px; border-radius: 4px; margin: 0 4px;padding: 6px 7px;"><a  ng-click="getObservationList(1)">Developee</a></span>-->
+                            <!--<span class="btn Observer-btn" style="width: 73px; font-size: 13px; border-radius: 4px; background-color: #d3d3d3; padding: 6px 7px;"><a  ng-click="getObservationList(2)">Developer</a></span>-->
+                            <!--</div>-->
+                            <!--</div>-->
+
+
+
+                            <!--</div>-->
+                            <!--</section>-->
+
+
+                            <div class="col-xs-12">
+                                <table id="obsrv-table" class="table" cellspacing="5" width="100%">
+                                    <thead>
+                                    <th>
+                                        <!--<div class="header-sort-cntr">-->
+                                        <!--<div class="caption">OBSERVER NAME</div>-->
+                                        <!--<div class="sort-order">-->
+                                        <!--<span class="arrow-down1">&nbsp;</span>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+
+                                        <div  class="header-sort-cntr"  ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                                            {{developColName}}
+
+                                            <span ng-show="sortType == 'name' && !sortReverse" class="arrow-down1">&nbsp;</span>
+                                            <span ng-show="sortType == 'name' && sortReverse" class="arrow-up">&nbsp;</span>
+                                        </div>
+
+                                    </th>
+                                    <th>
+                                        DATE RECORDED
+                                    </th>
+                                    <th>
+                                        ACTIONS
+                                    </th>
+                                    <th>
+                                        <div  class="header-sort-cntr"  ng-click="sortType = 'due_date'; sortReverse = !sortReverse">
+                                            ACTION DUE DATE
+
+                                            <span ng-show="sortType == 'due_date' && !sortReverse" class="arrow-down1">&nbsp;</span>
+                                            <span ng-show="sortType == 'due_date' && sortReverse" class="arrow-up">&nbsp;</span>
+                                        </div>
+
+                                    </th>
+                                    <th>
+                                        ACTION COMPLETED DATE
+                                    </th>
+                                    <th>
+
+                                        <div  class="header-sort-cntr"  ng-click="sortType = 'status'; sortReverse = !sortReverse">
+                                            STATUS
+
+                                            <span ng-show="sortType == 'status' && !sortReverse" class="arrow-down1">&nbsp;</span>
+                                            <span ng-show="sortType == 'status' && sortReverse" class="arrow-up">&nbsp;</span>
+                                        </div>
+
+
+                                    </th>
+                                    <th>
+                                        VIEW
+                                    </th>
+
+                                    </thead>
+                                    <tbody ng-repeat="ObservationList in observationList | orderBy:sortType:sortReverse | filter:search">
+
+                                    <tr>
+
+                                        <td>
+                                            {{ObservationList.name}}
+                                            <div ng-if="ObservationList.name == undefined">{{ObservationList.observee_BRID}}</div>
+                                        </td>
+
+                                        <td>
+                                            {{ObservationList.creation_date | date:'dd/MM/yyyy'}}
+                                        </td>
+
+                                        <td>
+                                            {{ObservationList.action_item_exists}}
+                                            <div ng-if="ObservationList.action_item_exists === ''">N/A</div>
+                                        </td>
+
+                                        <td>
+                                            {{ObservationList.due_date | date:'dd/MM/yyyy'}}
+                                            <div ng-if="ObservationList.due_date === ''">N/A</div>
+                                        </td>
+
+                                        <td>
+                                            {{ObservationList.completion_date | date:'dd/MM/yyyy'}}
+                                            <div ng-if="ObservationList.completion_date === ''">N/A</div>
+
+                                        </td>
+
+                                        <td>
+                                            <div ng-if="ObservationList.status == 'COMPLETE'"  class="completeStatus">{{ObservationList.status}}</div>
+                                            <div ng-if="ObservationList.status == 'INCOMPLETE'"  class="incompleteStatus">{{ObservationList.status}}</div>
+                                            <div ng-if="ObservationList.status == ''"  class="completeStatus">{{ObservationList.status}}</div>
+
+                                        </td>
+
+                                        <td>
+                                            <a style="  padding: 0 0 0 22px;" href="{{baseURL}}observationOverviewOthers/{{ObservationList.observationID}}"><img style="margin-right: 15px;" src="img/ArrowBlue.png" width="22" height="22" /></a>
+                                        </td>
+
+
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

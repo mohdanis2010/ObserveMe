@@ -1,0 +1,163 @@
+<div class="pg-hdr-cntr">
+    <article role="banner"  class="obsrv-banner-search container">
+
+     <div class="top-headingWrapper row">
+        <div class="col-xs-4">
+            <div class="txt-darkblue-mid">Develop</div>
+        </div>
+         <div class="col-xs-8 obsrvee-cntr">
+             <div id="obsrveeObsrverName" class="obsrvee-name"> Developer : {{developer}} | Developee : {{developee}} </div>
+             <div id="observeeNameID" class="obsrvee-name"> Developing : {{developee}} </div>
+             <div id="observeePhotoID" class="obsrvee-photo"><img ng-src="{{photoURL}}" err-src="{{placeholder}}"></div>
+         </div>
+     </div>
+    </article>
+</div>
+
+
+
+    <div class="teamMembers-wrapper">
+        <section class="container" role="main" id="newObsrvSection">
+            <div class="row clearfix">
+                <div class="content teamMembers-wrapper">
+
+                    <div id="observation-tabs">
+                    </div>
+
+                    <div id="observation-body">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group btn-Sumarise">
+                    <div class="col-xs-2 col-xs-offset-10">
+                        <button ng-click="saveDraftObservation()" type="submit" role="button" aria-labelledby="Summarise"
+                                tabindex="-1" class="col-xs-12 btn btn-primary">Summarise
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="container" role="main" id="summarySection">
+            <div id="ObservationCntr"></div>
+            <section>
+
+                <form name="actionForm">
+
+                    <p class="lbl-white">Summarise</p>
+
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3" id="txtSummarise"
+                                  placeholder="Please enter any comments" ng-model="observationSummary"></textarea>
+                    </div>
+
+                    <table id="os-action-tbl" class="table" cellspacing="5" width="100%" style="margin-top:1em">
+                        <thead>
+                        <tr>
+                            <th style="width: 70%">
+                                ACTION CREATED
+                            </th>
+                            <th style="width: 15%">
+                                DUE DATE
+                            </th>
+                            <th style="width: 15%">
+                                STATUS
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-ng-repeat="action in actionItems">
+                            <td>
+                                {{action.actionItemTitle}}
+                                <p>{{action.actionItemDescription}}</P>
+                            </td>
+                            <td>{{action.actionItemDispDueDate}}</td>
+                            <td style="text-align: center;">
+                                <img src="img/CloseRed.png" ng-click="deleteAction($index)" style="cursor:pointer">
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="lbl-white" style="margin-top:3em">Create a development action</p>
+
+                    <div class="col-xs-6" style="padding-right:5px">
+                        <div class="form-group">
+                            <label for="txtTitle" class="sr-only">Title</label>
+                            <input type="text" class="form-control" name="actionTitle" id="txtTitle" ng-model="actionTitle"
+                                   placeholder="Title"/>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <div class="form-group" id="datetimepicker">
+                            <label for="tbxDatetimepicker" class="sr-only">Due Date </label>
+
+                            <div class="input-group date" style="width: 100%">
+                                <input readonly='true' placeholder="Due Date"
+                                       style="background-color: white;" type="text" id="tbxDatetimepicker" class="form-control clndar" value=""/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" rows="3" id="txtDesc"
+                                  placeholder="Description (SMARTER)" ng-model="actionDesc"></textarea>
+                        <button class="col-xs-offset-10 col-xs-2 btn btn-primary" style="position:relative;top:-40px;left:-10px"
+                                id="createAction" ng-click="createAction()">Create Action
+                        </button>
+                    </div>
+
+                    <div class="col-xs-4 col-xs-offset-8" style="margin-top: 12px">
+                        <div class="col-xs-6 form-group" style="padding-right:2px">
+                            <button class="col-xs-12 btn btn-primary edit" id="editSummary">Edit Observation</button>
+                        </div>
+                        <div class="col-xs-6 form-group" style="padding-left:2px">
+                            <button type="submit" ng-click="launchConfirmDialog()" role="button" aria-labelledby="Save and Finish"
+                                    class="col-xs-12 btn btn-primary">Save and Finish</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </section>
+
+    </div>
+
+<div class="businessroleModal">
+   <div class="modal" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="Submit observation confirmation">
+     <div class="vertical-alignment-helper">
+         <div class="modal-dialog vertical-align-center">
+             <div class="modal-content">
+                 <div class="modal-body txt-blue-small" ng-model="currentAction">
+                         <br>
+                         <p> By submitting this you confirm that the data you have
+                         inputted is factual and correct to the best of your knowledge.
+                         </p>
+                         <p class=btm-buttons>
+                                <button type="button" class="btn btn-default cancel" id="btnCloseModal" ng-click="cancel()">Cancel</button>
+                                <button type="button" class="btn btn-primary" ng-click="saveObservation()">Submit </button>
+                         </p>
+                 </div>
+             </div>
+         </div>
+     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+<script type="text/javascript">
+
+
+
+</script>
+
+<div class="container-full">
+
+    <div class="container">
+        <div class="row">
+            <article role="banner" class="row obsrv-banner-search">
+                <div class="col-xs-6" style="padding:1em">
+                    <div class="txt-darkblue-mid">Observation Summary</div>
+                </div>
+                <div class="col-xs-6">
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <section class="observation-summary-cntr row clearfix" role="main">
+        <div id="ObservationCntr"></div>
+    <section>
+
+
+    <table id="os-action-tbl" class="table" cellspacing="5" width="100%">
+        <thead>
+            <tr>
+                <th style="width: 70%">
+                    ACTION CREATED
+                </th>
+                <th style="width: 15%">
+                    DUE DATE
+                </th>
+                <th style="width: 15%">
+                    STATUS
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-ng-repeat="action in actionItems">
+                <td>
+                    {{action.actionItemTitle}}
+                    <p>{{action.actionItemDescription}}</P>
+                </td>
+                <td>{{action.actionItemDueDate}}</td>
+                <td style="text-align: center;">
+                    <img src="img/icons/delete.png" ng-click="deleteAction($index)" style="width: 20%;cursor:pointer">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        
+
+        <form name="actionForm">
+
+            <p class="lbl-drkBlu">Summarise</p>
+
+            <div class="form-group">
+                <textarea class="form-control" rows="3" id="txtSummarise"
+                          placeholder="Please enter any comments" ng-model="observationSummary"></textarea>
+            </div>
+
+            <p class="lbl-drkBlu">Create an Action</p>
+
+            <div class="col-xs-6" style="padding-right:5px">
+                <div class="form-group">
+                    <label for="txtTitle" class="sr-only" >Title</label>
+                    <input type="text" class="form-control" name="actionTitle" id="txtTitle" ng-model="actionTitle" placeholder="Title"/>
+                </div>
+            </div>
+
+
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="datetimepicker" class="sr-only" >Due Date </label>
+
+                    <div class="input-group date"  >
+                        <input readonly='true' placeholder="Due Date" ng-click="clickDateTime()" style="background-color: white;" type="text" class="form-control" value="" id="datetimepicker"/>
+                <span class="input-group-addon add-on"><span
+                        class="glyphicon glyphicon-calendar" ></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <textarea class="form-control" rows="3" id="txtDesc"
+                          placeholder="Description (SMARTER)" ng-model="actionDesc"></textarea>
+                <button class="col-xs-offset-10 col-xs-2 btn btn-primary" style="position:relative;top:-40px;left:-10px"
+                        id="createAction" ng-click="createAction()">Create Action</button>
+            </div>
+
+            <div class="col-xs-4 col-xs-offset-8" style="margin-top: 12px">
+                <div class="col-xs-6 form-group" style="padding-right:2px">
+                    <button class="col-xs-12 btn btn-primary edit" id="editSummary">Edit Summary</button>
+                    </div>
+                <div class="col-xs-6 form-group" style="padding-left:2px">
+                    <button type="submit" ng-click="saveObservation()" role="button" aria-labelledby="Save and Finish" class="col-xs-12 btn btn-primary">Save and Finish</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+
+<script>
+
+
+
+$("#editSummary").on('click', function() {
+    history.back();
+    scope.$apply();
+});
+
+function goBack() {
+    window.history.back();
+}
+
+
+</script>

@@ -1,0 +1,392 @@
+/* Common CSS classes Like navigation bars , carousels, dialogs and others widgets and so on */
+
+/**:before, *:after {*/
+/*box-sizing: border-box;*/
+/*}*/
+
+/** {*/
+/*box-sizing: border-box;*/
+/*}*/
+
+/*Common font text and color*/
+
+.txt-blue{color: #017ab4;}
+.txt-blue-small{color: #017ab4;  font-size: 14px;}
+.txt-blue-norm{color: #017ab4; font-size: 16px;}
+.txt-blue-mid{color: #017ab4; font-size: 18px;}
+.txt-darkblue-mid {font-size: 2.25em;line-height: 1.17;font-weight: lighter;color: #00395d;/* margin-left: 150px; */padding: .5em 0;}
+.txt-white-small{color: #FFFFFF;  font-size: 14px}
+
+.txt-gray{color: #7e7e7e;}
+.txt-gray-smaller{color: #7e7e7e; font-size: 13px;}
+.txt-gray-small{color: #7e7e7e; font-size: 14px;}
+.txt-gray-small-mid{color: #7e7e7e; font-size: 17px;}
+.txt-gray-small-mid-dark{color:#686868; font-size: 17px;}
+.txt-gray-norm{color: #7e7e7e;font-size: 16px;}
+.txt-gray-norm-dark{color: #7e7e7e;font-size: 16px;}
+.txt-gray-norm-dark-bold{color: #7e7e7e;font-size: 15px; font-weight: bold;}
+.txt-gray-bold{color: #666666;font-size: 17px;font-weight: bold;}
+.txt-gray-timeprdTitle{color: #7e7e7e; font-size: 16px;}
+
+
+
+.cls-margin-right-less{margin-right: 9px;}
+.cls-margin-right{margin-right: 13px;}
+.cls-margin-left{margin-left: 6px;}
+.cls-margin-left-more{margin-left: 13px;}
+.cls-margin-top{margin-top: 12px;}
+.cls-margin-bottom{margin-bottom: 12px;}
+
+.list-group-item {}
+
+.list-view{}
+.list-view .list-group-item{}
+.listView{}
+.listView .list-group-item-text{}
+
+.listView .leftContent{}
+
+
+.bg-blu{ background-color: #0074A7}
+.bg-gry{ background-color: #333333}
+.bg-grn{ background-color: #339548}
+.bg-orn{ background-color: #EA6500}
+.bg-maroon{ background-color: #A5003D}
+.bg-drkBlu{ background-color: #003E65}
+.bg-mildBlu{ background-color:#3F6B84}
+.bg-trans{background-color: transparent;}
+
+/*Custom Button  Module*/
+.custom-btm-bottons {margin:0 auto;}
+.custom-btm-bottons .btn-custom{}
+.custom-btm-bottons .btn-custom-blue{}
+.custom-btm-bottons .btn-custom-amber{}
+.page-home-btm-bottons .btn-custom-green{}
+
+/*Word Break*/
+.wordbreak-itemAdded{width: 85%; word-break:break-all;}
+
+
+
+
+.truncate-ellipsis {
+    width:78%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*Customise checkbox*/
+
+.wraper-checkbox label {
+    display: inline;
+}
+
+.wraper-checkbox .regular-checkbox {
+    display: none;
+}
+
+.wraper-checkbox .regular-checkbox + label {
+    background-color: #ffffff;
+    border: 1px solid #cacece;
+    padding: 9px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+
+}
+
+
+.wraper-checkbox .regular-checkbox:checked + label:after {
+    /*content: '\2713';*/
+    content: url('');
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: #007cb8;
+
+    /*text-indent:-999em;*/
+    /*display:block;*/
+
+}
+
+
+
+/* Page header and search box common modules  */
+
+.srch-box-cntr
+{
+    padding: 15px 0px;
+    width: 460px;
+    float: right;
+}
+
+.srch-box-cntr input{
+    width: 82%;
+    display: inline-block;
+    float: right;
+}
+
+.srch-box-cntr .search-icon img {
+    width: 7%;
+    height: 34px;
+    float: right;
+    display: inline-block;
+    border: 1px solid #CCC;
+    position: relative;
+    background-color: #F1F1F1;
+    left: -2px;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
+.table .status-complete {
+    background-color: #017EB6 !important;
+    color: white !important;
+}
+
+.table .status-incomplete {
+    background-color: #CD3333 !important;
+    color: white !important;
+}
+
+
+.section-hdr {
+    background-color: #017EB6 !important;
+    color:white;
+    padding: .5em 1em;
+    border-radius: 2px;
+    margin: 2.5em 0px 0px;
+}
+
+.section-data {
+    background-color: white !important;
+    color: grey;
+    padding: 1em;
+    border-radius: 2px;
+    margin: 2px 0px 2px;
+    font-size: 11px;
+}
+
+.section-row {
+    margin: 2px 0px 2px;
+    border-radius:2px 2px 0px 0px;
+    width:100%;
+    display: table;
+}
+
+.section-row .row-hdr
+{
+    width: 15%;
+    padding: 1em;
+    vertical-align: top;
+    color: white;
+    border-radius:2px 0px 0px 2px;
+    display: table-cell;
+
+}
+
+.section-row .row-data
+{
+    background-color: white !important;
+    color: grey;
+    padding: 1em;
+    border-radius: 0px 2px 2px 0px;
+    font-size: 11px;
+    margin: 0px;
+    display: table-cell;
+}
+
+.section-row .row-left-data
+{
+    background-color: #F4F4F4;
+    color: #0074A7;
+    padding: .8em;
+    display: table-cell;
+    width: 30%;
+    vertical-align: middle;
+    position: relative;
+}
+
+.section-row .row-left-data .qtn{
+    display: inline-block;
+    min-width: 64%;
+    padding-right: 10px;
+    font-size: 13px;
+    max-width: 77%;
+}
+
+.section-row .row-left-data .qtn-btn{
+    vertical-align: middle;
+    display: table-cell;
+}
+
+
+
+
+.lbl-drkBlu {
+    color: #00395d;
+    margin-bottom: 5px;
+    margin-top: 18px;
+    font-size:13px;
+    font-weight: bold;
+}
+
+.lbl-white {
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    margin-top: 18px;
+    font-size:13px;
+    font-weight: bold;
+}
+
+
+/*Button Modul CSS*/
+
+.btn-primary {
+    background-image: -webkit-linear-gradient(top, #1075A5 0%, #1075A5 100%);
+    background-image: -o-linear-gradient(top, #1075A5 0%, #1075A5 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1075A5), to(#1075A5));
+    background-image: linear-gradient(to bottom, #1075A5 0%, #1075A5 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1075A5', endColorstr='#1075A5', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    background-repeat: repeat-x;
+    border-color: #1075A5;
+}
+
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #1075A5;
+    background-position: 0;
+}
+
+.btn-primary.edit {
+    background: #FFFFFF;
+    color: #00719b;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+/*Placeholder CSS*/
+::-webkit-input-placeholder {
+    font-size: 14px;
+    color: #d0cdfa;
+    text-align: left;
+}
+
+:-moz-placeholder { /* older Firefox*/
+    font-size:14px;
+    color: #d0cdfa;
+    /*text-transform: uppercase;*/
+    text-align: left;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    font-size: 14px;
+    color: #d0cdfa;
+    /*text-transform: uppercase;*/
+    text-align: left;
+}
+:-ms-input-placeholder {
+    font-size: 14px;
+    color: #d0cdfa;
+    /*text-transform: uppercase;*/
+    text-align: left;
+}
+
+
+/*sets float to either left or right*/
+/*.pull-right*/
+
+/*.pull-left*/
+
+
+/**********************************************/
+
+/*sets margin-left and margin-right to auto*/
+/*.center-block*/
+
+/**********************************************/
+
+/*sets right position in % as it is with columns (e.g. right: 25% with -push-3)*/
+/*.col-xs-push-* (.col-xs-push-1, .col-xs-push-2 ... up to -12)*/
+
+/*.col-sm-push-* (.col-sm-push-1, .col-sm-push-2 ... up to -12)*/
+
+/*.col-md-push-* (.col-md-push-1, .col-md-push-2 ... up to -12)*/
+
+/*.col-lg-push-* (.col-lg-push-1, .col-lg-push-2 ... up to -12)*/
+
+
+/**********************************************/
+
+/*aligns texts, usually paragraphs, with text-align CSS property*/
+/*.text-left*/
+
+/*.text-center*/
+
+/*.text-right*/
+
+/*.text-justify*/
+
+/**********************************************/
+
+/*.text-nowrap*/
+
+/*keeps the whole text with this class on a single line, no wrapping occurs because of white-space: nowrap CSS property of this class*/
+
+/*.text-lowercase*/
+
+/*.text-uppercase*/
+
+/*.text-capitalize*/
+
+/*sets text-transform CSS property to make all characters inside the element with this class lowercase, uppercase or capitalized*/
+/*.text-muted*/
+
+/*makes text grey*/
+/*.text-primary*/
+
+/*makes text blue*/
+/*.text-success*/
+
+/*makes text green*/
+/*.text-info*/
+
+/*makes text dark blue*/
+/*.text-warning*/
+
+/*makes text dark yellow*/
+/*.text-danger*/
+
+/*makes text red*/
+
+
+/*Form Reusable bootsrap CSS*/
+
+/*Bootstrap Forms' Classes*/
+/*don't forget that even form elements can be in the Bootstrap grid, so don't be afraid to use .row inside a form and then col-*-* wrappers*/
+/*.form-group*/
+
+/*when creating vertical forms, it's a class for its wrapper (mostly div) of each label and its input, adds some margin-bottom*/
+/*.form-control*/
+
+/*for every form element (input, textarea...), gives it 100% width*/
+/*to make it narrower, use a narrower wrapper (row and col-*-* divs)*/
+/*.form-control-static*/
+
+/*for a paragraph that replaces a form element (input...)*/
+/*.form-horizontal*/
+
+/*for horizontal forms where label is on the same line as input*/
+/*you have to use column classes (like col-xs-10) for each label and its input (or whateveer it is)*/
+/*still combined with .form-group wrapper and .form-control classes*/
+/*.form-inline*/
+
+/*for a single line form (but still vertical on extra small screens)*/
+/*often used with the placeholder attribute to not need labels*/
+/*labels of inline forms should get .sr-only class to be positioned so that they can't be seen (but they won't get display: none or visibility: hidden property)*/

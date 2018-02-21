@@ -1,0 +1,21 @@
+{
+  "name": "js-htmlencode",
+  "version": "0.1.1",
+  "main": [
+    "build/htmlencode.min.js"
+  ],
+  "ignore": [
+    "samples",
+    "tests"
+  ],
+  "homepage": "https://github.com/emn178/js-htmlencode",
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.1",
+    "commit": "ae368b64839a4bf36f3f536fbc9fa15ad5eef90b"
+  },
+  "_source": "git://github.com/emn178/js-htmlencode.git",
+  "_target": "~0.1.1",
+  "_originalSource": "js-htmlencode"
+}

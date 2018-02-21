@@ -1,0 +1,271 @@
+<style>
+.whiteText{
+    color:white;
+    font-size: large;
+}
+</style>
+
+<!--Sub Header section Start -->
+<div class="pg-hdr-cntr">
+    <article role="banner" class="obsrv-banner-search container">
+
+       <div class="top-headingWrapper">
+            <div class="col-xs-6">
+                <div class="txt-darkblue-mid">{{sectionTitles}}</div>
+            </div>
+            <div class="col-xs-6">
+                <div class="srch-box-cntr clearfix " id="searchBox" ng-show="!isTeamView">
+                    <div class="search-icon">
+                        <img src="img/Magnify.png" width="20" height="20" id="searchColleagueButton" tabindex="2">
+                    </div>
+                    <input aria-labelledby="member search box" type="text"  id="searchColleague"
+                           ng-model="searchColleagueKeyword"
+                           class="form-control"
+                           placeholder="Search colleague name or BRID" tabindex="1" />
+                </div>
+            </div>
+       </div>
+    </article>
+</div>
+
+
+<div class="container">
+
+
+<section class="homePage-container" role="main">
+    <div class="row clearfix">
+
+
+
+
+            <div class="teamMembers-wrapper">
+                <div style="font-size: 14px; padding: 0 10px;">
+                    <!--<div ng-if="employeeList.length">-->
+                        <!--<span ng-show="true">Select a team member.</span>-->
+                    <!--</div>-->
+
+                    <div ng-if="employeeList.length" style="margin-left: 9px;">
+                        <div ng-switch on="isSearchEnabled">
+                            <span ng-switch-when="false" class="whiteText">
+                                    Select a team member
+                             </span>
+                         </div>
+                    </div>
+
+                </div>
+
+
+                <!--<ANY ng-switch="expression">-->
+                    <!--<ANY ng-switch-when="matchValue1">...</ANY>-->
+                    <!--<ANY ng-switch-when="matchValue2">...</ANY>-->
+                    <!--<ANY ng-switch-default>...</ANY>-->
+                <!--</ANY>-->
+
+
+
+                         <!--if Search retuned results-->
+
+                        <div ng-switch on="isSearchEnabled" style="width: 100%; float: left; margin-left: 9px;">
+
+                            <span ng-switch-when="true">
+                               <div ng-if="employeeList.length">
+                                   <div style="display: inline" class="form-group">
+                                       <div class="col-xs-2 col-xs-offset-0" style="margin-left: 8px;">
+                                           <button ng-click='prevPage()' type="submit" role="button" aria-labelledby="Back to previous page" tabindex="-1" class="col-xs-12 btn btn-primary">Back to previous page</button>
+                                       </div>
+                                   </div>
+                                   <div style="float: left; width: 100%; padding: 10px 0 0 10px;">
+                                       <p class="whiteText">Your search result <span id="resultsResult"></span></p>
+
+                                   </div>
+
+                               </div>
+                            </span>
+                        </div>
+
+
+
+                        <div class="row members-thumb-SubDiv" style="height:auto;">
+
+                            <div class="col-xs-2 image-box" ng-repeat="memberData in employeeList">
+                                <a  class="thumbnail" ng-click="selectEmployee(memberData)">
+                                     <img ng-src="{{memberData.photoURL}}" err-src="{{placeholder}}">
+                                    <div class="name-board">{{memberData.displayName}}</div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <!--If search returned no results-->
+                        <div ng-if="!employeeList.length" class="empty-searchResult">
+                            <div class="row" style="text-align: center; margin: 0 auto;" ng-if="searchKeyword.length">
+                                <div><p class="whiteText">Sorry, your search returned no results, please try another search term.</p></div>
+                                <div class="form-group">
+                                    <div class="col-xs-2 col-xs-offset-5" style="">
+                                        <button ng-click='prevPage()' type="submit" role="button" aria-labelledby="Back to previous page" tabindex="-1" class="col-xs-12 btn btn-primary">Back to previous page</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                         <!--if no direct reports-->
+                        <div ng-switch on="isSearchEnabled">
+                            <span ng-switch-when="false">
+                               <div ng-if="!employeeList.length && !isTeamView">
+                                   <div class="row" style="text-align: center; margin: 0 auto; margin-bottom: 79px;">
+                                       <div><p class="whiteText">To begin, please search for your developee in the search box above.</p></div>
+                                   </div>
+                               </div>
+                               <div ng-if="!employeeList.length && isTeamView">
+                                   <div class="row" style="text-align: center; margin: 0 auto; margin-bottom: 79px;">
+                                       <div><p class="whiteText">There are no direct reports to show.</p></div>
+                                   </div>
+                               </div>
+                            </span>
+                        </div>
+
+
+                <!--<div ng-repeat="memberData in employeeList">-->
+
+                          <!--<div ng-show="!employeeList.length">No Items</div>-->
+
+                      <!--</div>-->
+
+
+                <!--Bottom section - previous observation-->
+                <div ng-if="!isTeamView" class="prevObservation-wrapper" style="margin-top: 20px;">
+                    <div style="font-size: 14px; padding: 0 10px;"  id="prevDevelopeeID">
+                               <div ng-if="prevObserveList.length" style="margin-left: 8px;">
+                                   <span ng-show="true" class="whiteText">Select a previous developee</span>
+                               </div>
+                    </div>
+                    <div class="row members-thumb-SubDiv" style="height:auto;">
+                        <div class="col-xs-2 image-box" ng-repeat="prevObserve in prevObserveList">
+                                <a  class="thumbnail" ng-click="selectEmployeeFromPrevList(prevObserve)">
+                                    <img ng-src="{{prevObserve.photoURL}}" err-src="{{placeholder}}">
+                                    <div class="name-board">{{prevObserve.displayName}}</div>
+                               </a>
+                          </div>
+                     </div>
+                 </div>
+
+
+
+
+
+
+               <!--<div ng-switch on="backtoPreviousPage">-->
+
+                   <!--<div class="row" ng-switch-when="true">-->
+
+                       <!--<div class="form-group">-->
+                           <!--<div class="col-xs-2 col-xs-offset-5">-->
+                               <!--<button type="submit" role="button" aria-labelledby="Summarise" tabindex="-1" class="col-xs-12 btn btn-primary">Summarise</button>-->
+                           <!--</div>-->
+                       <!--</div>-->
+
+                   <!--</div>-->
+                <!--</div>-->
+
+
+
+       </div>
+    </div>
+</section>
+</div>
+
+
+
+
+ <style>
+
+     .vertical-alignment-helper {
+         display:table;
+         height: 100%;
+         width: 100%;
+         pointer-events:none;
+     }
+     .vertical-align-center {
+         /* To center vertically */
+         display: table-cell;
+         vertical-align: middle;
+         pointer-events:none;
+     }
+     .modal-content {
+         /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+         width:inherit;
+         height:inherit;
+         /* To center horizontally */
+         margin: 0 auto;
+         pointer-events:all;
+     }
+ </style>
+<!-- Modal -->
+
+ <div class="businessroleModal">
+
+     <div class="modal" id="BusinessSelectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div class="vertical-alignment-helper">
+             <div class="modal-dialog vertical-align-center">
+                 <div class="modal-content">
+
+                     <div class="modal-body" style="margin: 0 auto; text-align: center;">
+
+
+                         <div  class="btn-group bisnsAreaSelection">
+
+                             <div class="chooseObservee" style="font-size: 13px; color: #1075A5; text-align: center;">
+                                 <!--<div>You have chosen <span>Jan Dev</span> as your observee.</div>-->
+                                 <!--<span>Please select the observee role below.</span>-->
+                                 <div class="obsrvee-name"> You have chosen '{{displayPopupName}}' as your developee.</div>
+                                 <div class="obsrvee-name"> Please select the developee role below.</div>
+                             </div>
+
+                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width: 310px !important; height: 35px;text-align: left;">
+                                 <span style="color: #000 !important; text-shadow:none !important; font-size: 13px; color: #808080 !important;">{{selected}}</span>
+                                 <img style="margin-top: 5px; margin-right: 0px;" class="pull-right" src="img/ArrowDown.png" width="17" height="10">
+                             </button>
+
+                             <ul class="dropdown-menu" role="menu" style="width: 310px !important; background-color: #05395D; height: 250px !important;min-height: 250px !important;overflow-x: hidden !important;overflow-y: scroll !important;">
+                                 <li>
+
+                                     <div style="color: #ffffff;padding: 5px 0 0 21px;"><img style="margin-right: 6px;" class="pull-left" src="img/User.png" width="13" height="14"> Job roles</div>
+
+                                     <ul ng-repeat="businessAreaName in businessName" class="businessAreaListItems" style="color: #ffffff !important;">
+                                         <li ng-click="clicktoSelectBusiness()"><span style="border: 1px solid #0967a7; border-bottom:none;  border-right: none;border-left: none; width: 286px; float: left;padding: 8px 0;">{{businessAreaName.name}}</span>
+
+                                             <ul class="businessAreaChildList" ng-repeat="item in businessAreaName.businessRoles">
+
+                                                 <li>
+                                                     <a style="color: #ffffff !important; font-size: 11px !important; border: 1px solid #0967a7;border-right: none; border-bottom:none;border-left: none;border-left: none; width: 286px; float: left;padding:8px 0px 8px 7px;" ng-click="clicktoSelectBusiness(item)">{{ item.name }}
+                                                     <i style="float: right;margin: -4px 14px 0 0;">&nbsp;</i>
+                                                     </a>
+                                                 </li>
+
+                                             </ul>
+                                         </li>
+                                     </ul>
+
+                                 </li>
+                             </ul>
+
+                         </div>
+
+                         <div style="width: 100%; position: relative; top:42px; text-align: center;">
+                             <button type="button" class="btn btn-primary btn-process" ng-click="proceedtoObservation()">Proceed</button>
+                         </div>
+
+                     </div>
+
+                     <!--<div class="modal-footer">-->
+                     <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+
+                     <!--</div>-->
+                 </div>
+             </div>
+         </div>
+     </div>
+
+ </div>
+

@@ -1,0 +1,154 @@
+<!--<div class="pg-hdr-cntr">-->
+<!--<article role="banner" class="obsrv-banner-search container">-->
+<!--<div class="col-xs-6">-->
+<!--<div class="txt-darkblue-mid">Learn</div>-->
+<!--</div>-->
+<!--<div class="col-xs-6">-->
+<!--<div class="srch-box-cntr clearfix ">-->
+<!--<div class="search-icon">-->
+<!--<img src="img/Magnify.png" width="20" height="20" id="searchButton">-->
+<!--</div>-->
+<!--<input aria-labelledby="Search learning modules" type="text" id="searchColleague"-->
+<!--class="form-control typeahead"-->
+<!--placeholder="Search learning modules"/>-->
+<!--</div>-->
+<!--</div>-->
+<!--</article>-->
+<!--</div>-->
+
+<!--Sub Header section Start -->
+<div class="pg-hdr-cntr">
+    <article role="banner" class="obsrv-banner-search container">
+
+        <div class="top-headingWrapper">
+            <div class="col-xs-6">
+                <div class="txt-darkblue-mid">Learn</div>
+            </div>
+            <div class="col-xs-6">
+                <div class="srch-box-cntr clearfix ">
+                    <div class="search-icon">
+                        <img src="img/Magnify.png" width="20" height="20" id="searchButton">
+                    </div>
+                    <input aria-labelledby="Search learning modules" type="text" id="searchColleague"
+                           class="form-control typeahead"
+                           ng-model="searchKeyword"
+                           placeholder="Search learning modules"/>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+
+
+
+
+<!--<div id="player_a1" class="projekktor"></div>-->
+
+<!--<script type="text/javascript">-->
+<!--$(document).ready(function() {-->
+<!--projekktor('#player_a1', {-->
+<!--poster: 'https://www.media.barclays.co.uk/serveimg/162545.jpg',-->
+<!--title: 'this is ObserveMe',-->
+<!--playerFlashMP4: '/swf/StrobeMediaPlayback/StrobeMediaPlayback.swf',-->
+<!--playerFlashMP3: '/swf/StrobeMediaPlayback/StrobeMediaPlayback.swf',-->
+<!--width: 640,-->
+<!--height: 385,-->
+<!--playlist: [-->
+<!--{-->
+<!--0: {src: "https://www.media.barclays.co.uk/serve/160424-5853908.mp4", type: "video/mp4"}-->
+<!--}-->
+<!--]-->
+<!--}, function(player) {} // on ready-->
+<!--);-->
+<!--});-->
+<!--</script>-->
+
+
+<div class="container">
+
+    <div class="teamMembers-wrapper">
+        <div style="padding:2em 0;">
+
+            <div class="row clearfix ">
+
+                <div class="col-xs-8 col-sm-8">
+                    <a class="btn btn-primary" href="{{baseURL}}learn" role="button">Back to learn library</a>
+
+                    <div class="learnDtl-contentTitle">
+                        <img src="img/icons/{{learnData.category}}White.png">
+                        <!--<h5 style="margin-top: 0px; line-height: 28px">{{learnData.title}}</h5>-->
+                        <p style="color: white !important;font-size:large;line-height: 2em;" class="ng-binding">{{learnData.title}}</p>
+                    </div>
+                    <div class="learnDtl-video-section">
+
+                        <!--<div class="modal fade bs-example-modal-lg" id="homeVideoModal" style="z-index: 9999 !important;">-->
+                        <!--<div class="modal-dialog" id="homeVideoModalBody">-->
+                        <!--</div>-->
+                        <!--</div>-->
+
+                        <div id="homeVideo" style="width: 600px; height: 380px;"></div>
+
+                        <div style="color:white">
+                            <!--<img src="{{learnData.uploadedByProfile.profile_image_url}}">-->
+
+                            <!--<h5 style="margin-top: 0px">your instructor for this module is: {{learnData.uploadedByProfile.name}}</h5>-->
+                            <!--<p>-->
+                            <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut-->
+                            <!--labore et dolore magna aliqua. Ut enimadminim veniam-->
+                            <!--</p>-->
+
+                            <div class="description"><p>{{learnData.document_extract}}</p></div>
+
+
+                            <a target="_blank" ng-if="learnData.category == 'pdf'" href="{{learnData.content_url}}"
+                               type="button" id="downloadDocumentButton" data-loading-text="Downloading..."
+                               class="btn btn-primary" ng-click="updateContentHistory();" autocomplete="off">
+                                Read full PDF
+                            </a>
+                            <a target="_blank" ng-if="learnData.category == 'doc'" href="{{learnData.content_url}}"
+                               type="button" id="downloadDocumentButton" data-loading-text="Downloading..."
+                               class="btn btn-primary" ng-click="updateContentHistory();" autocomplete="off">
+                                Download Document
+                            </a>
+                            <a target="_blank" ng-if="learnData.category == 'link'" href="{{learnData.content_url}}"
+                               type="button" id="downloadDocumentButton" data-loading-text="Downloading..."
+                               class="btn btn-primary" ng-click="updateContentHistory();" autocomplete="off">
+                                Open Link
+                            </a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-xs-4 col-sm-4">
+                    <div class="side-note-cntr float-video-notes">
+                        <!--<h4>{{learnData.category}} Notes</h4>-->
+                        <h4>Module Info</h4>
+
+                        <p>
+                            {{learnData.description}}
+                        </p>
+
+                        <div class="rating-cntr">
+                            <div class="txt-blue-small"> Was this module useful?</div>
+                            <div class="rating-img-cntr">
+                                <div class="rtngImg" ng-class="likeSelected" ng-click="rateContent('1');">
+                                    <img src="img/icons/like.png"  >
+                                </div>
+                                <div class="rtngImg" ng-class="dislikeSelected" ng-click="rateContent('-1');">
+                                    <img src="img/icons/dislike.png"  >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="video-bottom-wrapper"></div>

@@ -1,0 +1,452 @@
+<style>
+
+    #obsrv-table.table {
+        border-spacing: 2px;
+        border-collapse: separate;
+    }
+
+    #obsrv-table.table > tbody > tr > td {
+        color: grey;
+        padding: 4px;
+        line-height: 2.3;
+        border: none;
+        overflow: hidden;
+        vertical-align: middle;
+        background-color: white;
+    }
+
+    #obsrv-table.table > thead > tr > th {
+        color: #017EB6;
+        background-color: #f3f3f3;
+        vertical-align: top;
+        padding: 4px;
+        border: none;
+    }
+
+    #obsrv-table .header-sort-cntr .caption {
+        display: inline-block;
+        width: 10rem;
+    }
+
+    #obsrv-table .header-sort-cntr .sort-order {
+        display: inline-block;
+        width: 6%;
+        margin-top: 0.5rem;
+        vertical-align: top;
+    }
+
+
+
+    #obsrv-table td.green {
+        background-color: #73A220 !important;
+        color: white !important;
+    }
+
+    .obsrv-top-fltr-cntr {
+        width: 44%;
+        float: right;
+        padding: 4px;
+        background-color: rgba(42, 94, 119, 0.5);
+        color: #017ab4;
+    }
+
+    .obsrv-top-fltr-cntr .btn {
+        background-color:#cccccc;
+        width: 50%;
+        float: left;
+        border-radius: 0px;
+    }
+
+    /*.obsrv-top-fltr-cntr .btn.active {*/
+        /*background-color: #017EB6 !important;*/
+        /*-webkit-box-shadow: none;*/
+        /*box-shadow: none;*/
+        /*color: #ffffff;*/
+    /*}*/
+
+    /*#obsrv-table .arrow-down {*/
+        /*width: 0;*/
+        /*height: 0;*/
+        /*border-left: 8px solid transparent;*/
+        /*border-right: 8px solid transparent;*/
+        /*border-top: 8px solid #017EB6;*/
+    /*}*/
+
+    /*#obsrv-table .arrow-down:after {*/
+        /*width: 0;*/
+        /*height: 0;*/
+        /*border-left: 8px solid transparent;*/
+        /*border-right: 8px solid transparent;*/
+        /*border-top: 8px solid white;*/
+        /*display: block;*/
+        /*content: "";*/
+        /*position: relative;*/
+        /*top: -10px;*/
+        /*left: -8.8px;*/
+    /*}*/
+
+    /*#obsrv-table .arrow-up {*/
+        /*width: 0;*/
+        /*height: 0;*/
+        /*border-left: 8px solid transparent;*/
+        /*border-right: 8px solid transparent;*/
+        /*border-bottom: 8px solid #017EB6;*/
+    /*}*/
+
+    /*#obsrv-table .arrow-up:after {*/
+        /*width: 0;*/
+        /*height: 0;*/
+        /*border-left: 8px solid transparent;*/
+        /*border-right: 8px solid transparent;*/
+        /*border-bottom: 8px solid white;*/
+        /*display: block;*/
+        /*content: "";*/
+        /*position: relative;*/
+        /*top: 2px;*/
+        /*left: -8.8px;*/
+    /*}*/
+
+    .incompleteStatus{
+        background-color: #CC353A;
+        color: #ffffff;
+        padding: 0 11px;
+    }
+    .completeStatus{
+        background-color: #017EB6;
+        color: #ffffff;
+        padding: 0 11px;
+    }
+
+</style>
+
+<!--<script>-->
+
+    <!--$("#obsrv-table .header-sort-cntr").bind("click", function () {-->
+
+        <!--alert("do sort");-->
+    <!--});-->
+
+
+    <!--$("#searchButton").bind("click", function () {-->
+
+        <!--alert("do search");-->
+    <!--});-->
+
+<!--</script>-->
+
+
+<!--Sub Header section Start -->
+<div class="pg-hdr-cntr">
+    <article role="banner" class="obsrv-banner-search container">
+        <div class="col-xs-6">
+            <div class="txt-darkblue-mid">Observation Record</div>
+        </div>
+        <div class="col-xs-6">
+            <div class="srch-box-cntr clearfix ">
+                <div class="obsrv-top-fltr-cntr">
+                    <span class="btn Observee-btn"><a  ng-click="getObservationList(1)">Observee</a></span>
+                    <span class="btn Observer-btn"><a  ng-click="getObservationList(2)">Observer</a></span>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+
+
+
+<div class="container">
+<section class="observation-record-cntr row clearfix" role="main">
+
+<div class="row observation-Rcrdfilters">
+
+    <div class="btn-group filter-wrapper">
+
+        <ul class="nav navbar-nav">
+            <li class="dropdown mega-dropdown">
+                <a href="javascript:" class="dropdown-toggle namefilter" style="background-color: #ffffff; padding-top: 8px !important;padding-bottom: 8px !important;">
+                    <i class="fa fa-"></i>
+                    Filter by observer name
+                    <img style="  margin-left: 14px;margin-top: 6px; margin-right: 0px;" class="pull-right" src="img/ArrowDown.png" width="18" height="10">
+                </a>
+
+                <ul class="dropdown-menu mega-dropdown-menu" id="observerNameMenu">
+
+                    <li class="filterItems" ng-repeat="item in uniqueNames">
+                                <span>{{item}}
+                                   <input style="float: right;margin-right: 13px;" type="checkbox" ng-model="color.selected" name="selected"  ng-click="selectPerson($event,item)">
+                                </span>
+                    </li>
+
+                    <p>
+                        <button type="submit" style="float: right; margin: 12px 15px 6px 0;  padding: 6px 0 2px 0;" role="button" aria-labelledby="Filter" tabindex="-1" class="col-xs-3 btn btn-primary" id="filterByname" ng-click="filterByname()">Filter</button>
+                    </p>
+                </ul>
+            </li>
+        </ul>
+
+        <button class="cleaFilter-btn"  ng-click="filterClear()">
+            <img src="img/CloseRed.png" width="15" height="15" />
+        </button>
+
+    </div>
+
+
+
+
+    <div  class="btn-group filter-wrapper">
+        <ul class="nav navbar-nav">
+            <li class="dropdown mega-dropdown ">
+                <a href="javascript:" class="dropdown-toggle datefilter" style="background-color: #ffffff; padding-top: 8px !important;padding-bottom: 8px !important;">
+                    <i class="fa fa-"></i>
+                    Filter by Due Date
+                    <img style="  margin-left: 14px;margin-top: 6px; margin-right: 0px;" class="pull-right" src="img/ArrowDown.png" width="18" height="10">
+                </a>
+
+                <ul class="dropdown-menu mega-dropdown-menu" id="observerDateMenu">
+
+                    <li style="border-bottom:none">
+                        <div id="datetimepicker">
+                            <span style="padding: 0 3px;"> From </span>
+
+                                    <span class="add-on" style="padding: 0 7px;">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                            <!--<div class="input-group date">-->
+                            <input readonly='true' placeholder="From" style="background-color: white;margin-left: 24px;" type="text" id="fromDate" ng-model="fromDate" class="form-control"  />
+                            <!--</div>-->
+                        </div>
+                    </li>
+
+                    <li style="border-bottom:none">
+                        <div id="datetimepicker-1">
+                            <span style="padding: 0 3px;"> To </span>
+
+                                    <span class="add-on" style="padding: 0 19px;">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                            <!--<div class="input-group date">-->
+                            <input readonly='true' placeholder="To" style="background-color: white; margin-left: 14px;" type="text" id="toDate" ng-model="toDate" class="form-control" value=""/>
+                            <!--</div>-->
+                        </div>
+                    </li>
+
+                    <button type="submit" style="float: right; margin: 12px 20px 6px 0;  padding: 6px 0 2px 0;" role="button" aria-labelledby="Filter" tabindex="-1" class="col-xs-3 btn btn-primary" id="filterByDate" ng-click="filterByDate()">Filter</button>
+
+                </ul>
+
+            </li>
+        </ul>
+
+        <button class="cleaFilter-btn"  ng-click="filterClear()">
+            <img src="img/CloseRed.png" width="15" height="15" />
+        </button>
+
+    </div>
+
+
+
+
+    <div  class="btn-group filter-wrapper">
+        <ul class="nav navbar-nav">
+            <li class="dropdown mega-dropdown ">
+                <a href="javascript:" class="dropdown-toggle statusfilter" style="background-color: #ffffff; padding-top: 8px !important;padding-bottom: 8px !important;">
+                    <i class="fa fa-"></i>
+                    Filter by Status
+                    <img style="  margin-left: 14px;margin-top: 6px; margin-right: 0px;" class="pull-right" src="img/ArrowDown.png" width="18" height="10">
+                </a>
+
+                <ul class="dropdown-menu mega-dropdown-menu" id="observerStatusMenu">
+
+                    <li class="filterItems" ng-repeat="item in uniqueStatus">
+                                <span>{{item}}
+                                   <input style="float: right;margin-right: 13px;" type="checkbox" name="selected"  ng-click="selectStatus($event,item)">
+                                </span>
+                    </li>
+                    <button type="submit" style="float: right; margin: 12px 15px 6px 0;  padding: 6px 0 2px 0;" role="button" aria-labelledby="Filter" tabindex="-1" class="col-xs-3 btn btn-primary" id="filterByStatus" ng-click="filterByStatus()">Filter</button>
+                    <!--<button style="float: right; margin-right: 20px;" ng-click="filterByStatus()">Filter</button>-->
+                </ul>
+
+            </li>
+        </ul>
+
+        <button class="cleaFilter-btn"  ng-click="filterClear()">
+            <img src="img/CloseRed.png" width="15" height="15" />
+        </button>
+
+    </div>
+
+
+</div>
+
+
+<div class="col-xs-12">
+    <table id="obsrv-table" class="table" cellspacing="5" width="100%">
+        <thead>
+        <th>
+            <!--<div class="header-sort-cntr">-->
+                <!--<div class="caption">OBSERVER NAME</div>-->
+                <!--<div class="sort-order">-->
+                    <!--<span class="arrow-down1">&nbsp;</span>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <div  class="header-sort-cntr"  ng-click="sortType = 'name'; sortReverse = !sortReverse">
+                OBSERVER NAME
+
+                <span ng-show="sortType == 'name' && !sortReverse" class="arrow-down1">&nbsp;</span>
+                <span ng-show="sortType == 'name' && sortReverse" class="arrow-up">&nbsp;</span>
+            </div>
+
+        </th>
+        <th>
+            DATE RECORDED
+        </th>
+        <th>
+            ACTIONS
+        </th>
+        <th>
+
+
+            <div  class="header-sort-cntr"  ng-click="sortType = 'due_date'; sortReverse = !sortReverse">
+                ACTION DUE DATE
+
+            <span ng-show="sortType == 'due_date' && !sortReverse" class="arrow-down1">&nbsp;</span>
+            <span ng-show="sortType == 'due_date' && sortReverse" class="arrow-up">&nbsp;</span>
+            </div>
+
+        </th>
+        <th>
+            DATE COMPLETED
+        </th>
+        <th>
+
+            <div  class="header-sort-cntr"  ng-click="sortType = 'status'; sortReverse = !sortReverse">
+                STATUS
+
+                <span ng-show="sortType == 'status' && !sortReverse" class="arrow-down1">&nbsp;</span>
+                <span ng-show="sortType == 'status' && sortReverse" class="arrow-up">&nbsp;</span>
+            </div>
+
+
+        </th>
+        <th>
+            VIEW SUMMARY
+        </th>
+
+        </thead>
+        <tbody ng-repeat="ObservationList in observationList | orderBy:sortType:sortReverse | filter:search">
+
+        <tr>
+
+            <td>
+                {{ObservationList.name}}
+            </td>
+
+            <td>
+                {{ObservationList.creation_date | date:'dd/MM/yyyy'}}
+            </td>
+
+            <td>
+                {{ObservationList.action_item_exists}}
+                <div ng-if="ObservationList.action_item_exists === ''">N/A</div>
+            </td>
+
+            <td>
+                {{ObservationList.due_date | date:'dd/MM/yyyy'}}
+
+                <div ng-if="ObservationList.due_date === ''">N/A</div>
+            </td>
+
+            <td>
+                {{ObservationList.completion_date | date:'dd/MM/yyyy'}}
+                <div ng-if="ObservationList.completion_date === ''">N/A</div>
+            </td>
+
+            <td>
+                <div ng-if="ObservationList.status == 'COMPLETE'"  class="completeStatus">{{ObservationList.status}}</div>
+                <div ng-if="ObservationList.status == 'INCOMPLETE'"  class="incompleteStatus">{{ObservationList.status}}</div>
+                <div ng-if="ObservationList.status == ''"  class="completeStatus">{{ObservationList.status}}</div>
+
+            </td>
+
+            <td>
+                <a style="  padding: 0 0 0 46px;" href="{{baseURL}}observationOverview/{{ObservationList.observationID}}"><img src="img/ArrowBlue.png" width="22" height="22" /></a>
+            </td>
+
+
+        </tr>
+
+
+        </tbody>
+    </table>
+</div>
+</section>
+</div>
+
+
+
+<!--Filter Menu CSS-->
+<script>
+    $('li.dropdown.mega-dropdown a.namefilter').on('click', function (event) {
+        $(this).parent().toggleClass("open");
+        $("#observerNameMenu").slideDown();
+    });
+
+
+    $('li.dropdown.mega-dropdown a.datefilter').on('click', function (event) {
+        $(this).parent().toggleClass("open");
+        $("#observerDateMenu").slideDown();
+    });
+
+
+    $('li.dropdown.mega-dropdown a.statusfilter').on('click', function (event) {
+        $(this).parent().toggleClass("open");
+        $("#observerStatusMenu").slideDown();
+    });
+
+
+    $('#filterByname').on('click', function (event) {
+        $("#observerNameMenu").slideUp();
+    });
+
+
+    $('#filterByDate').on('click', function (event) {
+        $("#observerDateMenu").slideUp();
+    });
+
+    $('#filterByStatus').on('click', function (event) {
+        $("#observerStatusMenu").slideUp();
+    });
+
+
+
+    $('body').on('click', function (e) {
+        if (!$('li.dropdown.mega-dropdown').is(e.target) && $('li.dropdown.mega-dropdown').has(e.target).length === 0 && $('.open').has(e.target).length === 0) {
+            $('li.dropdown.mega-dropdown').removeClass('open');
+            $("#observerNameMenu").slideUp();
+            $("#observerStatusMenu").slideUp();
+            $("#observerDateMenu").slideUp();
+        }
+    });
+
+
+
+    $('.cleaFilter-btn').on('click', function (event) {
+        $('.filterItems').find("input[type='checkbox']").removeAttr('checked');
+
+    });
+
+    $('.Observee-btn').css('background', '#017EB6').children('a').css('color', '#fff');
+
+    $('.Observee-btn').click(function() {
+        $(this).css('background', '#017EB6').children('a').css('color', '#fff');
+        $('.Observer-btn').css('background', '#E8E8E8').children('a').css('color', '#005e81');
+        });
+
+    $('.Observer-btn').click(function() {
+        $(this).css('background', '#017EB6').children('a').css('color', '#fff');
+        $('.Observee-btn').css('background', '#E8E8E8').children('a').css('color', '#005e81');
+    });
+
+</script>

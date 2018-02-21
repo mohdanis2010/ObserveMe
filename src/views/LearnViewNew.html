@@ -1,0 +1,74 @@
+<script>
+
+    $.fn.enterKey = function (fnc) {
+        return this.each(function () {
+            $(this).keypress(function (ev) {
+                var keycode = (ev.keyCode ? ev.keyCode : ev.which);
+                if (keycode == '13') {
+                    fnc.call(this, ev);
+                }
+            })
+        })
+    };
+
+
+    $("#searchBox").enterKey(function () {
+        triggerSearch();
+    })
+
+</script>
+
+
+<section class="container" role="main">
+
+    <div class="row clearfix">
+
+        <article role="banner" class="row" style="width: 100%; float: left;">
+            <div class="col-xs-6">
+                <h1>Learn</h1>
+            </div>
+            <div class="col-xs-5" style="text-align: right;">
+                <div class="inner-addon left-addon" id="searchBox">
+                    <!--<i class="glyphicon glyphicon-search" aria-hidden="true"  ></i>-->
+                    <input aria-labelledby="member search box" ng-model="searchKeyword" type="text" id="searchColleague" class="form-control"
+                           placeholder="Search learning modules"/>
+                </div>
+            </div>
+            <div class="col-xs-1" style="text-align: right;">
+                <button type="button" id="searchButton" data-loading-text="Searching..." class="btn btn-primary" autocomplete="off">
+                    Search
+                </button>
+            </div>
+
+        </article>
+    </div>
+
+    <div class="row clearfix">
+        <div class="row body-background">
+
+            <div data-ng-repeat="record in learnArray track by $index">
+                <a href="index.html#learnDetail/{{record.content_id}}">
+                    <div class="col-xs-4 col-sm-4">
+                        <div class="module"> <!--use "module-visited" to show the completed modules -->
+                            {{record.title}}
+                              <span ng-if="record.content_type == 'mp4'">
+                                    <img src="{{record.thumbail_url}}" width="100%">
+                                </span>
+
+                            <div class="btn-details">
+                                <div class="row">
+                                    <div class="col-xs-8 col-sm-8"><img src="img/icons/{{record.content_type}}.png">
+                                    </div>
+                                    <div class="col-xs-4 col-sm-4 module-subtitle">
+                                        {{record.sub_title}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>

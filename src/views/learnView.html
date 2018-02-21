@@ -1,0 +1,99 @@
+
+<!--Sub Header section Start -->
+<!--<div class="pg-hdr-cntr">-->
+    <!--<article role="banner" class="obsrv-banner-search container">-->
+
+        <!--<div class="top-headingWrapper">-->
+            <!--<div class="col-xs-6">-->
+                <!--<div class="txt-darkblue-mid">Learn</div>-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</article>-->
+<!--</div>-->
+
+<!--<div class="pg-hdr-cntr">-->
+    <!--<article role="banner" class="obsrv-banner-search container">-->
+        <!--<div class="col-xs-6">-->
+            <!--<div class="txt-darkblue-mid">Learn</div>-->
+        <!--</div>-->
+        <!--<div class="col-xs-6">-->
+            <!--<div class="srch-box-cntr clearfix ">-->
+                <!--<div class="search-icon">-->
+                    <!--<img src="img/Magnify.png" width="20" height="20" id="searchButton">-->
+                <!--</div>-->
+                <!--<input aria-labelledby="Search learning modules" type="text" id="searchModule"-->
+                       <!--class="form-control typeahead"-->
+                       <!--placeholder="Search learning modules"/>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</article>-->
+<!--</div>-->
+
+
+
+<div class="pg-hdr-cntr">
+    <article role="banner" class="obsrv-banner-search container">
+
+        <div class="top-headingWrapper">
+            <div class="col-xs-6">
+                <div class="txt-darkblue-mid">Learn</div>
+            </div>
+            <div class="col-xs-6">
+                <div class="srch-box-cntr clearfix ">
+                    <div class="search-icon">
+                        <img src="img/Magnify.png" width="20" height="20" id="searchButton">
+                    </div>
+                    <input aria-labelledby="Search learning modules" type="text" id="searchModule"
+                           class="form-control typeahead"
+                           placeholder="Search modules using keywords"/>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+
+
+<div class="container">
+    <div class="teamMembers-wrapper">
+        <section class="learning-module-cntr row clearfix" role="main">
+            <div class="row clearfix">
+                <div class="row">
+                    <p class="txt-white-small" style="padding-left: 15px">Access the latest learning modules.</p>
+
+                    <div data-ng-repeat="record in learnArray track by $index">
+                        <a href="{{baseURL}}learnDetail/{{record.content_id}}">
+                            <div class="col-xs-4 col-sm-4">
+
+                                <div class="module-round-wrapper">
+                                    <b class="rtop"><b class="r1" ng-class="record.viewed"></b><b class="r2" ng-class="record.viewed"></b><b class="r3" ng-class="record.viewed"></b><b class="r4" ng-class="record.viewed"></b></b>
+
+
+                                    <div class="module" ng-class="record.viewed"> <!--use "module visited" to show the completed modules -->
+                                        {{record.title}}
+                                  <span ng-if="record.category == 'mp4'">
+                                        <img src="{{record.thumbail_url}}" width="100%">
+                                    </span>
+
+                                        <div class="btm-details">
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-8"><img src="img/icons/{{record.category}}Blue.png">
+                                                </div>
+                                                <div class="col-xs-4 col-sm-4 module-subtitle">
+                                                    {{record.duration}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <b class="rbottom"><b class="r4" ng-class="record.viewed"></b><b class="r3" ng-class="record.viewed"></b><b class="r2" ng-class="record.viewed"></b><b
+                                            class="r1" ng-class="record.viewed"></b></b>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+ </div>
+</div>

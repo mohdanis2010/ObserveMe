@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .thumbnail {
+            float: left;
+            width: 110px;
+            height: 90px;
+            margin: 5px;
+        }
+    </style>
+
+    <script src="components/jquery/jquery.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css" charset="utf-8" />
+    <script>
+
+       function clickDateTime (){
+            $('#datetimepicker').datetimepicker({
+                format: 'd-m-Y',
+                timepicker: false,
+                closeOnDateSelect: true
+                /*,
+                onGenerate:function( ct ){
+                    var top = $("#datetimepicker").offset().top + $("#datetimepicker").height();
+                    jQuery(this).css("top",top);
+                }*/
+            });
+
+        };
+
+    </script>
+
+
+</head>
+<body>
+
+<h3>Image Gallery</h3>
+
+<p>Try to resize the browser-window to see what happens when the images do not have enough room.</p>
+
+
+<div>
+    <input readonly='true' placeholder="Due Date" onclick="clickDateTime()"
+           style="background-color: white;" type="text" class="form-control" value=""
+           id="datetimepicker"/>
+</div>
+</body>
+</html>

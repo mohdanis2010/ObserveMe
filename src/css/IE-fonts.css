@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'expert_sansregular';
+    src: url('../ie/expertsans-regular-webfont.eot');
+
+    src: url('../ie/expertsans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+
+    url('../ie/expertsans-regular-webfont.woff2') format('woff2'),
+    url('../ie/expertsans-regular-webfont.woff') format('woff'),
+    url('../ie/expertsans-regular-webfont.ttf') format('truetype'),
+    url('../ie/expertsans-regular-webfont.svg#expert_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

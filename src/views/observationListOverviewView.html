@@ -1,0 +1,97 @@
+<!--<div class="pg-hdr-cntr">-->
+<!--<article role="banner" class="obsrv-banner-search container">-->
+<!--<div class="col-xs-6">-->
+<!--<div class="txt-darkblue-mid">Development overview</div>-->
+<!--</div>-->
+<!--<div class="col-xs-6">-->
+<!--</div>-->
+<!--</article>-->
+<!--</div>-->
+
+
+
+<div class="pg-hdr-cntr">
+    <article role="banner"  class="obsrv-banner-search container">
+
+        <div class="top-headingWrapper row">
+            <div class="col-xs-4">
+                <div class="txt-darkblue-mid">Development overview</div>
+            </div>
+
+
+            <div class="col-xs-8 obsrvee-cntr">
+                <div class="obsrvee-name ng-binding" style="float:right"> <span ng-show="show">Developer : {{developer}}  |</span> Developee : {{developee}}</div>
+
+            </div>
+
+        </div>
+    </article>
+</div>
+
+
+
+<div class="container">
+    <div class="teamMembers-wrapper">
+        <section class="observation-overview-cntr row clearfix" role="main">
+
+            <a class="btn btn-primary" ng-click='ListRecordPage()'  role="button">Back to record</a>
+            <!--<button ng-click='recordPage()' type="submit" role="button" aria-labelledby="Back to record page" tabindex="-1" class="col-xs-12 btn btn-primary">Back to record</button>-->
+
+            <div id="summary">
+                <div class="section-hdr">Summary</div>
+                <p class="section-data" id="obsrvSummary">
+                </p>
+            </div>
+
+
+            <div class="section-hdr" id="actionsTbl">Actions Created</div>
+            <table id="oo-action-tbl" class="table" cellspacing="5" width="100%">
+                <thead>
+                <th style="width: 70%">
+                    ACTION TITLE
+                </th>
+                <th style="width: 15%">
+                    DUE DATE
+                </th>
+                <th style="width: 15%">
+                    STATUS
+                </th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="actionItem in actionItems track by actionItem.actionItemID">
+                    <td>
+                        <a href='' ng-click="showActionModal({{actionItem.actionItemID}});">{{actionItem.title}}</a>
+                    </td>
+                    <td>{{actionItem.dispDueDate}}</td>
+                    <td ng-class="actionItem.statusClass">{{actionItem.actionItemStatus}}</td></tr>
+                </tbody>
+            </table>
+
+            <section>
+                <div id="ObservationCntr"></div>
+            </section>
+        </section>
+    </div>
+
+</div>
+
+
+
+<div class="modal" id="completeActionModal" tabindex="-1" role="dialog" aria-labelledby="Complete Action">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-body txt-blue-small" ng-model="currentAction">
+                    <p>    {{currentAction.title}} <br>
+                        Due By :{{currentAction.dispDueDate}} <br><br>
+                        {{currentAction.description}}
+                    </p>
+                    <p class=btm-buttons>
+                        <button type="button" class="btn btn-default cancel" id="btnCloseModal">Cancel</button>
+                        <button type="button" class="btn btn-primary" ng-click="completeAction(currentAction.actionItemID);">Complete Action</button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

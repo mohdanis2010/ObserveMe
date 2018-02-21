@@ -1,0 +1,12 @@
+{
+"name": "jqplot",
+"main": "jquery.jqplot.js",
+"ignore": [
+"**/.*",
+"component.json",
+"package.json",
+"Makefile",
+"tests",
+"examples"
+]
+}

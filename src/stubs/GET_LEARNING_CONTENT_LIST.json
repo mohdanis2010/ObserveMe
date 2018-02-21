@@ -1,0 +1,24 @@
+{
+    "status": {
+      "code": 200,
+      "message": "Success"
+    },
+    "response": [{
+      "content_id": 1,
+      "title": "",
+      "sub_title": "",
+      "created_at": "",
+      "thumbnail_url": "",
+      "content_type": "",
+      "business_unit_id": ""
+    }, {
+      "content_id": 2,
+      "title": "",
+      "sub_title": "",
+      "created_at": "",
+      "thumbnail_url": "",
+      "content_type": "",
+      "business_unit_id": ""
+    }],
+    "sessionId": ""
+}

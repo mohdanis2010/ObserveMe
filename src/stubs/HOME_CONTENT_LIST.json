@@ -1,0 +1,78 @@
+
+
+{
+"status": {
+"code": 200,
+"message": "Success"
+},
+
+"profile_detail": {
+  "name": "John",
+  "account_name": "CLIENT/E200555",
+  "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png"
+},
+
+"team_members": [{
+     "members_id": 1,
+     "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+     "name": "John 1"
+},{
+    "members_id": 2,
+    "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+    "name": "Smith"
+}
+,{
+    "members_id": 3,
+    "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+    "name": "Garry"
+}
+    ,{
+        "members_id": 4,
+        "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+        "name": "Garry"
+    }
+    ,{
+        "members_id": 5,
+        "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+        "name": "Garry"
+    }
+
+  ,{
+      "members_id": 5,
+      "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+      "name": "Garry"
+    }
+],
+
+"previous_observation": [
+     {
+        "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+        "name": "Smith"
+
+     },
+
+    {
+        "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+        "name": "John"
+
+    },
+
+    {
+        "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+        "name": "Garry"
+
+    },
+
+    {
+        "profile_photo": "http://my.barclays.intranet/_layouts/images/O14_person_placeHolder_192.png",
+        "name": "ABC"
+
+    }
+
+],
+
+"sessionId": ""
+}
+
+
+

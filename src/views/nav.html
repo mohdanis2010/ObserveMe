@@ -1,0 +1,195 @@
+<!-- The justified navigation menu is meant for single line per list item.
+     Multiple lines will require custom code not provided by Bootstrap. -->
+
+
+<!--<div style="width: 100%; background-color: white; height: 20px;">-->
+
+    <!--Header-->
+
+<!--</div>-->
+
+
+
+
+
+<div class="masthead" aria-label="main navigation">
+
+  <div class="top-navMenu1 topSliderWrapper" style="display: none;">
+
+      <div style="width:80%; background-color:yellow; margin:20px auto;">
+
+           <div style="width:50%; float:left;">
+              <div style="color:white;text-align:left;  padding: 0 0 20px 0;">
+                  <img class="imgBurgerWhite" src="img/BurgerWhite.png" width="15" height="15" style="margin: -4px 5px 0 5px; cursor:pointer;" />
+                  <span style="font-size:14px;">DevelopMe</span>
+              </div>
+
+              <div class="topnav-row" style="width:90%; color:white; font-size:14px; padding: 16px 7px 46px 7px; border-top:1px solid #0099CC; border-bottom:1px solid #0099CC;">
+                  <!--<a href="index.html#newObservation">-->
+                  <a href="{{baseURL}}selectObservee">
+                      <span class="topNav-links">
+                            <span style="float:left; text-align:left;">
+                            <span>Develop</span>
+                             <div style="font-size:10px; tex-align:left;">Begin observation and coaching</div>
+                            </span>
+                            <span style="float:right;">
+                            <img src="img/ArrowWhite.png" width="20" height="20" />
+                            </span>
+                       </span>
+                   </a>
+              </div>
+
+              <div class="topnav-row" style="width:90%; color:white; font-size:14px; padding: 16px 7px 46px 7px; border-top:none; border-bottom:1px solid #0099CC;">
+                  <a href="{{baseURL}}observationRecord">
+                      <span class="topNav-links">
+                         <span style="float:left; text-align:left;">
+                         <span>Development record</span>
+                         <div style="font-size:10px; tex-align:left;">Insight and previous observations</div>
+                         </span>
+                         <span style="float:right;">
+                         <img src="img/ArrowWhite.png" width="20" height="20" />
+                         </span>
+                     </span>
+                  </a>
+              </div>
+          </div>
+
+          <div style="width:50%; float:right;">
+              <div class="navcloseBtn" style="text-align:right; margin-right:38px;   padding: 0px 0px 20px; cursor: pointer; color:white;"><img src="img/CloseWhite.png" width="15" height="15" /></div>
+
+              <div class="topnav-row" style="width:90%; color:white; font-size:14px; padding: 16px 7px 46px 7px; border-top:1px solid #0099CC; border-bottom:1px solid #0099CC;">
+
+                  <a href="{{baseURL}}myTeam">
+
+                      <span class="topNav-links">
+                        <span style="float:left; text-align:left;">
+                         <span>Team</span>
+                         <div style="font-size:10px; tex-align:left;">Team records</div>
+                        </span>
+                        <span style="float:right;">
+                        <img src="img/ArrowWhite.png" width="20" height="20" />
+                        </span>
+                      </span>
+                  </a>
+              </div>
+
+
+              <div class="topnav-row" style="width:90%; color:white; font-size:14px; padding: 16px 7px 46px 7px; border-top:none; border-bottom:1px solid #0099CC;">
+                  <a href="{{baseURL}}learn">
+                    <span class="topNav-links">
+                        <span style="float:left; text-align:left;">
+                         <span>Learn</span>
+                         <div style="font-size:10px; tex-align:left;">Observation and feedback development</div>
+                         </span>
+                         <span style="float:right;">
+                         <img src="img/ArrowWhite.png" width="20" height="20" />
+                         </span>
+                     </span>
+                  </a>
+              </div>
+
+          </div>
+
+      </div>
+
+  </div>
+
+
+
+
+
+  <!--   Second Menu-->
+
+  <div class="top-navMenu2 topSliderWrapper" style="display: none;">
+
+      <div style="width:80%; margin:20px auto;">
+          <div style="color:white;text-align:left;  padding: 0 0 20px 0;">
+              <img class="imgSettingsWhite" src="img/SettingsWhite.png" width="15" height="15" style="margin: -4px 5px 0 5px; cursor:pointer; " />
+              <span style="font-size:16px; margin-top: 5px;">User preferences</span>
+              <span class="navcloseBtn" style="float:right; margin-right:38px;   padding: 0px 0px 20px; cursor: pointer; color:white;"><img src="img/CloseWhite.png" width="15" height="15" /></span>
+          </div>
+
+          <div style="width:50%; float:right;">
+
+
+              <div class="vertical-menu">
+                  <!--Business Area-->
+                  <ul>
+                      <li>
+                          <h3>
+                              <img src="img/User.png" width="13" height="16" style="margin: -4px 5px 0 5px;" />
+                              <span style="margin: -11px 0 0 8px;">Role</span>
+                              <span style="margin: -3px 8px 0 0; float: right;" class="plus">
+                                  <img src="img/ArrowWhite.png" width="20" height="20" />
+                              </span>
+                          </h3>
+                          <ul style="height: 350px; min-height: 350px; overflow: hidden; overflow-y: scroll;" id="navigation_business_areas_list">
+                          </ul>
+                      </li>
+
+                  </ul>
+              </div>
+         </div>
+
+
+          <div style="width:50%; float:left;">
+              <div class="navcloseBtn" style="text-align:right; margin-right:38px;   padding: 0px 0px 20px; cursor: pointer; color:white;"></div>
+              <div class="vertical-menu">
+                  <!--Color Settings-->
+                  <ul>
+                      <li>
+                          <h3 style="margin-top:-20px !important;">
+                              <img src="img/ColourSettings.png" width="15" height="15" style="margin: -4px 5px 0 5px;" />
+                              <span>Background</span><span style="margin: -3px 8px 0 0; float: right;" class="plus"><img src="img/ArrowWhite.png" width="20" height="20" />
+                          </span>
+                          </h3>
+
+                          <ul id="bg_colour_settings">
+                          </ul>
+
+                      </li>
+
+                  </ul>
+              </div>
+          </div>
+
+      </div>
+
+   </div>
+
+
+
+
+
+
+
+    <!--New Header contents section END-->
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="top-navcustom">
+
+            <div style="width: 25%;float: left; text-align: left;line-height:2.2">
+                <div class="navbar-header navbar-left topNavbar-header">
+                    <img class="tool-tip" src="img/MenuTooltip.png" style="position: absolute;margin: 59px 0 0 -14px;width: 11%; height: auto; display:none" />
+                    <div class="sliderbtn topnavBtnPrimary" aria-label=""><img src="img/BurgerBlue.png" width="20" height="15" /></div>
+                    <div class="colorProfileBtn topnavBtnPrimary" aria-label="" class="setting-btn"><img src="img/SettingsBlue.png" width="20" height="19" /></div>
+                    <img class="tool-tip" src="img/PreferencesTooltip.png" style="position: absolute;margin: -36px 0 0 60px;width: 15%;height: auto; display:none" />
+                </div>
+            </div>
+
+
+            <div class="obj-centerDiv">
+                <div style="color: #0096ce;font-size:21px; cursor: pointer; line-height:1.8" ng-click='homePage()'>Develop Me</div>
+            </div>
+
+
+            <div style="width: 25%;float: right; text-align: right;">
+                <div class="navbar-header" style="float:right;">
+                <a href="" aria-label="" id="logo" ng-click='homePage()'><img src="img/logo.png" width="160" height="34" /></a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+ </div>

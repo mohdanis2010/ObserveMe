@@ -1,0 +1,492 @@
+/* All IE breakpoints and browsers prefixes CSS goes here */
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+    font-family: 'expert_sansregular';
+    background-color:#36607d;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+   /* overflow:auto !important;   commented since this is causing issue with Datepicker*/
+
+}
+
+#tbxDatetimepicker{
+    padding: 6px;
+}
+
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+pre,
+nav,
+section,
+summary {
+    display: block;
+    font-family: 'expert_sansregular';
+}
+
+
+
+@media only screen and (max-width:1020px) {
+
+    body {
+        /*width: 1024px;*/
+        min-width: 1024px;
+
+    }
+  /*.container{max-width: 1024px; height:100%;}*/
+
+}
+
+
+/*IE fixed contianer width*/
+/*.container{width:1024px !important;}*/
+
+ /*body{overflow: hidden !important; overflow-y: scroll !important;}*/
+
+/*@media screen and (max-width: 960px)*/
+/*{*/
+
+    /*.container {*/
+        /*margin-left: 10px;*/
+        /*margin-right: 10px;*/
+
+    /*}*/
+
+
+/*}*/
+
+
+
+/*@media only screen and (max-width:850px) {*/
+
+    /*.container {*/
+        /*width: 1024px;*/
+        /*min-width: 1024px;*/
+        /*border: 1px solid red;*/
+    /*}*/
+
+/*}*/
+
+
+/*@media only screen and (min-width:800px) {*/
+
+    /*.container {*/
+        /*width: 1024px;*/
+        /*min-width: 1024px;*/
+        /*border: 1px solid blue;*/
+    /*}*/
+
+    /*.container-wrapper{min-height: 78%; height: 78%;}*/
+     /*body{overflow: hidden !important;}*/
+    /*.btn-process{width: 283px; margin-left: 4px;}*/
+/*}*/
+
+/*@media only screen and (min-width:1045px) {*/
+
+    /*.container {*/
+        /*width: 1024px;*/
+        /*min-width: 1024px;*/
+        /*border: 1px solid yellow;*/
+    /*}*/
+
+    /*.container-wrapper{min-height: 83.4%; height: 83.4%;}*/
+    /*.btn-process{width: 283px; margin-left: 0px;}*/
+/*}*/
+
+
+
+
+
+.container-full {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: -23px;
+    background-color: #ffffff;
+}
+
+.navbar {
+    min-height:35px;
+}
+/*.obsrv-banner-search{padding-right: 8px;}*/
+
+
+
+
+/*Logo CSS*/
+#logo{position: relative; top: -25px; right: 10px;}
+
+/*Top Nav wrapper*/
+
+/*.topnav-wrapper{width:1000px; margin:0 auto;}*/
+
+
+
+/*Drop down custome CSS*/
+
+.businessroleModal .btn-group > .btn:first-child {
+    padding: 5px 0px;
+    margin-top: 3px;
+    width: 84.3%;
+    color: #007db7;
+    font-size: 15px;
+    /*float: left;*/
+    /* margin-left: 2px; */
+}
+
+.businessroleModal .cls-margin-left {
+    margin-left: 6px;
+}
+
+.businessroleModal .btn-default {
+    background-image: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+    background-image: -o-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+    background-image: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+    background-repeat: repeat-x;
+    border-color: #098cbd;
+    /* text-shadow: 0 1px 0 #fff; */
+    border-color: #098cbd;
+}
+
+.businessroleModal .btn-default:hover, .btn-default:focus {
+    background-color: #ffffff !important;
+    background-position: 0 50px;
+}
+
+.dropdown-main .btn-default:hover, .dropdown-main .btn-default:focus{
+    background-color: #ffffff !important;
+}
+
+.dropdown-main .btn-default {
+    background-color: #ffffff !important;
+    background-position: 0 50px;
+}
+
+
+
+.businessroleModal .chooseObservee{
+    font-size: 12px;
+    color: #1075A5;
+    /*margin-left: 44px;*/
+    margin-top: 26px;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+
+.businessroleModal .modal-dialog {
+    width: 505px;
+    margin: 30px auto;
+    height: 263px;
+}
+
+#submitModal .modal-dialog {
+    height: 203px;
+    width: 505px;
+}
+
+#completeActionModal .modal-dialog {
+    width: 505px;
+    margin: 30px auto;
+}
+
+.mega-dropdown{width: 200px !important;}
+.mega-dropdown-menu{width: 200px !important; background-color: #ffffff !important; color:#ffffff; font-size: 12px;}
+.mega-dropdown-menu li{
+
+    /* border-bottom: 1px solid #7F9BC3; */
+    /* padding: 8px 5px 13px 5px; */
+    height: 19px;
+    border-bottom: 1px solid #7F9BC3;
+    padding: 11px 4px 29px 5px;
+}
+
+.cleaFilter-btn{
+    float: right;
+    margin-left: 0px;
+    width: 35px;
+    background-color: lightgray;
+    border: none;
+    margin-top: -36px;
+    height: 36px;
+}
+
+.filter-wrapper{width: 290px;}
+
+.mega-dropdown-menu .form-control {
+    /* display: block; */
+    width: 56%;
+    height: 27px;
+    padding: 2px 5px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555555;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #fff;
+    /* border-radius: 4px; */
+    /* -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); */
+    /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); */
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+
+/*#observation-tabs > button{*/
+    /*height: 43px;*/
+    /*margin: 0 31px 0 0px;*/
+
+/*}*/
+
+/*#observation-tabs > button + button + button + button{*/
+
+   /*position: relative;*/
+   /*right: -4px !important;*/
+
+    /*margin-right: -1.3%;*/
+    /*border: 2px solid red !important;*/
+/*}*/
+
+#observation-tabs > button {
+    width: 31.6%; /* Declare your value. Can be in relative units. */
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    height: 43px;
+    background-color: #1D73A7;
+
+    /* IE fix. */
+    *display: inline;
+    zoom: 1;
+
+    text-align: left;
+    font-weight: bold;
+    margin: 0 1.6% 0 0;
+
+}
+
+#observation-body{
+    background-color: #1D73A7;
+    color: white;
+    padding: 10px;
+    height: 90%;
+    width: 98%;
+}
+
+#logo {
+    position: relative;
+    top: 3px;
+}
+
+.obj-centerDiv{width: 44%;float: left;text-align: center;}
+
+.obsrv-banner-search{
+    background: url(../img/header-shadow-IE.png);
+    background-position:top;
+    background-repeat:no-repeat;
+    background-size: 100%;
+    /*padding: 12px 0px 0px 0;*/
+    /*background-position-y:-17px;*/
+    /*-ms-background-position-y:-17px;*/
+}
+
+.add-icon{
+    background: url(../img/TickWhite.png);
+    background-position:center;
+    background-repeat:no-repeat;
+    padding: 5px 6px 4px 6px;
+    margin-right: 8px;
+}
+
+
+.btn-Sumarise .col-xs-2{right:19px;}
+.table-layout .ui-accordion-content{margin-top: -13px !important;}
+
+.module .btm-details {
+    position: absolute;
+    bottom: 9%;
+    /*margin-right:60px;*/
+    margin-left:7%;
+    right: 0%;
+    left: 0px;
+    width: 73%;
+}
+
+.observation-Rcrdfilters .navbar-nav{
+    width:210px;
+    margin-left: 3px;      /* z-index: -1000; */
+    border: none !important;
+    border-radius: 3px;
+}
+
+.dropdown.mega-dropdown a {
+    background-color: #ffffff;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    border: 1px solid grey;
+    /*margin-left: 2px;*/
+    /*color: grey;*/
+
+}
+
+.arrowAlign{position: relative; top: -28px; left: 70px;}
+
+.filter-row-container
+{
+    margin: 21px 0 0 3%;
+}
+
+.recordcloseBtn{position: relative; top: 50px; left: 50px;}
+
+.AnlycloseBtn{position: relative; top: 35px; right: -30px;}
+.recordcloseBtn{position: relative; top: 37px; left:30px;}
+
+
+.record-arrow{}
+
+.clsBtn-1{margin-right: -40px;}
+.clsBtn-2{margin-right: -34px}
+.clsBtn-3{margin-left: -24px}
+
+.recird-wrapper2{width: 250px !important;}
+.filterBtnWrapper{width: 170px !important;}
+
+.custom-btn-group{float: left; width:100%; height: 50px !important; margin-left:4px; text-align: left;}
+.custom-btn-group .btn {
+    width: 83px !important;
+}
+
+
+.navbar-nav .open .dropdown-menu {border: 1px solid #d3d3d3 !important; padding: 0px;}
+.mega-dropdown-menu li{border: none !important;}
+.mega-dropdown-menu li{border-bottom: 1px solid #d3d3d3 !important;}
+/*.filterArrow{margin: 5px 90px 0 0;}*/
+
+.btn-process{width: 306px; margin-left: -2px !important;}
+
+#obsrv-table.table {
+    border-spacing: 2px;
+    border-collapse: separate;
+    width:100%;
+}
+
+.formTxtArea{width:100%; height:100%; border: 0px; color: black; padding:0 0 0 9px;}
+
+/*NEW DROPDOWN MENU CSS*/
+
+.open > .dropdown-toggle.btn-default{
+
+    background-color: #ffffff !important;
+    border-color: #cccccc;
+}
+
+
+.container .float-video-notes{
+    min-width:80%
+}
+
+.learnDtl-video-section .description{
+    margin-top:15px;
+    padding: 15px 15px 15px 15px;
+    background: white;
+    color: #333333;
+    margin-bottom: 1em;
+}
+
+
+.dropdown-menu {
+    position: absolute;
+    top: 98%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    /*float: left;*/
+    min-width: 240px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    padding-bottom: 0px
+}
+.record-menu .btn-default{width: 176px; text-align:left;}
+.dropdown-main .dropdown-menu {min-width: 200px !important;width: 200px !important;}
+.div-filter{
+    display: inline-block;
+    border-radius: 3px;
+    border:1px solid #cccccc;
+    width: 36px;
+    height: 34px;
+    vertical-align: top;
+    text-align: center;
+    padding: 4px 0 0 0;
+    margin-left: 6px;
+}
+
+/*Calender CSS*/
+
+.cal-inp-1{width: 110px !important; margin-left: 12px; border: 1px solid lightgrey;}
+.cal-inp-2{width: 110px !important; margin-left: 11px; border: 1px solid lightgrey;}
+.cal-wrapp{margin-left:10px;}
+.cal-spacer{width: 100%; padding: 10px 0;}
+.cal-done-btn{float: right; margin: 12px 20px 6px 0;  padding: 6px 0 2px 0;}
+.span-name{width: 30px !important;float: left;}
+.span-chkbox{ width: 20px !important;}
+.dev-chk{width: 15%; height: 30px; float: right;padding: 5px 6px 0 0;}
+
+/*.row-data{visibility: hidden !important;}*/
+
+
+/*.blue-border{*/
+    /*/!*outline: none !important;  -- this was commented by Anis*!/ */
+    /*border: 2px solid #098cbd !important;*/
+/*}*/
+
+.button-border{border: 1px solid #098cbd !important;  outline:1px solid #098cbd !important;}
+
+
+.section-row .row-left-data .qtn {
+    display: inline-block;
+    min-width: 60%;
+    padding-right: 10px;
+    font-size: 13px;
+    max-width: 75%;
+}
+
+.section-row .row-left-data {
+    background-color: #F4F4F4;
+    color: #0074A7;
+    padding: .8em;
+    display: table-cell;
+    width: 31% !important;
+    vertical-align: middle;
+    position: relative;
+}
+
+
+
+
+
+

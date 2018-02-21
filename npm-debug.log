@@ -1,0 +1,25 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'link' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose linkPkg /Users/anis/work/ObserveMe/Application
+5 silly gentlyRm /usr/local/lib/node_modules/ObserveMe is being purged
+6 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/ObserveMe
+7 verbose stack Error: EACCES, symlink '/Users/anis/work/ObserveMe/Application'
+7 verbose stack     at Error (native)
+8 verbose cwd /Users/anis/work/ObserveMe/Application
+9 error Darwin 14.1.0
+10 error argv "node" "/usr/local/bin/npm" "link"
+11 error node v0.12.4
+12 error npm  v2.10.1
+13 error path /Users/anis/work/ObserveMe/Application
+14 error code EACCES
+15 error errno -13
+16 error Error: EACCES, symlink '/Users/anis/work/ObserveMe/Application'
+16 error     at Error (native)
+16 error  { [Error: EACCES, symlink '/Users/anis/work/ObserveMe/Application']
+16 error   errno: -13,
+16 error   code: 'EACCES',
+16 error   path: '/Users/anis/work/ObserveMe/Application' }
+17 error Please try running this command again as root/Administrator.
+18 verbose exit [ -13, true ]
